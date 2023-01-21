@@ -2,17 +2,16 @@ package com.relicary.spring101.web.app.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.Map;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class IndexController {
 
     @GetMapping({"/index", "/", "/home"})
-    public String index(Map<String, Object> map){
+    public ModelAndView index(ModelAndView mv){
 
-        map.put("title", "Hi Spring Framework with Map!");
-
-        return "index";
+        mv.addObject("title", "Hi Spring Framework with ModelAndView!");
+        mv.setViewName("index");
+        return mv;
     }
 }
