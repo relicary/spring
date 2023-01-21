@@ -23,6 +23,7 @@ public class IndexController {
         User user = new User();
         user.setFirstName("Ana");
         user.setLastName("Almeida");
+        user.setEmail("ana.almeida@relicary.com");
 
         model.addAttribute("user", user);
         model.addAttribute("title", "User profile: ".concat(user.getFirstName()));
