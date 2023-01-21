@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -39,23 +39,19 @@ public class IndexController {
     @GetMapping("/list")
     public String getListProfiles(Model model) {
 
-        List<User> users = new ArrayList<>();
-        users.add(
-            User.builder()
-                .firstName("Ana").lastName("Almeida").email("ana.almeida@relicary.com")
-                .build()
-        );
-
-        users.add(
-            User.builder()
-                .firstName("Benito").lastName("Blanco").email("benito.blanco@relicary.com")
-                .build()
-        );
-
-        users.add(
-            User.builder()
-                .firstName("Celia").lastName("Crespo").email("celia.crespo@relicary.com")
-                .build()
+        List<User> users = Arrays.asList(
+                User.builder()
+                        .firstName("Ana").lastName("Almeida").email("ana.almeida@relicary.com")
+                        .build(),
+                User.builder()
+                        .firstName("Benito").lastName("Blanco").email("benito.blanco@relicary.com")
+                        .build(),
+                User.builder()
+                        .firstName("Celia").lastName("Crespo").email("celia.crespo@relicary.com")
+                        .build(),
+                User.builder()
+                        .firstName("David").lastName("Duato").email("david.duato@relicary.com")
+                        .build()
         );
 
         model.addAttribute("title", "User List");
