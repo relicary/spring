@@ -23,10 +23,12 @@ public class IndexController {
 
     @GetMapping("/profile")
     public String getProfile(Model model) {
-        User user = new User();
-        user.setFirstName("Ana");
-        user.setLastName("Almeida");
-        user.setEmail("ana.almeida@relicary.com");
+
+        User user = User.builder()
+                .firstName("Ana")
+                .lastName("Almeida")
+                .email("ana.almeida@relicary.com")
+                .build();
 
         model.addAttribute("user", user);
         model.addAttribute("title", "User profile: ".concat(user.getFirstName()));
