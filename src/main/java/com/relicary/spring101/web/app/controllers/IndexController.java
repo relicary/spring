@@ -25,6 +25,7 @@ public class IndexController {
         user.setLastName("Almeida");
 
         model.addAttribute("user", user);
+        model.addAttribute("title", "User profile: ".concat(user.getFirstName()));
 
         return "profile";
     }
