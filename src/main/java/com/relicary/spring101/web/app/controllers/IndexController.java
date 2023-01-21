@@ -6,6 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 @RequestMapping("/app")
 public class IndexController {
@@ -29,5 +32,16 @@ public class IndexController {
         model.addAttribute("title", "User profile: ".concat(user.getFirstName()));
 
         return "profile";
+    }
+
+    @GetMapping("/list")
+    public String getListProfiles(Model model) {
+
+        List<User> users = new ArrayList<>();
+
+        model.addAttribute("title", "User List");
+        model.addAttribute("users", users);
+        
+        return "list";
     }
 }
