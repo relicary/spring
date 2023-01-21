@@ -40,6 +40,23 @@ public class IndexController {
     public String getListProfiles(Model model) {
 
         List<User> users = new ArrayList<>();
+        users.add(
+            User.builder()
+                .firstName("Ana").lastName("Almeida").email("ana.almeida@relicary.com")
+                .build()
+        );
+
+        users.add(
+            User.builder()
+                .firstName("Benito").lastName("Blanco").email("benito.blanco@relicary.com")
+                .build()
+        );
+
+        users.add(
+            User.builder()
+                .firstName("Celia").lastName("Crespo").email("celia.crespo@relicary.com")
+                .build()
+        );
 
         model.addAttribute("title", "User List");
         model.addAttribute("users", users);
